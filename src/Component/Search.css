@@ -1,0 +1,133 @@
+.search-component {
+  margin-top: 10px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  background: rgba(155, 174, 202, 0.1);
+  width: 100%;
+  border-radius: 10px;
+  position: relative;
+}
+
+.search-inside {
+  width: 90%;
+  margin-left: 10px;
+  border: none;
+}
+.icon-component{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding-left: 19px;
+
+}
+.bell-icon{
+    width: 22px;
+    height: 24px;
+  margin-top: 4px;
+}
+
+.mail-icon{
+    width: 24px;
+    height: 22px;
+}
+.search-suggestions {
+  position: absolute;
+  top: 100%; /* Hiển thị ngay bên dưới thanh tìm kiếm */
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10; /* Đảm bảo nằm phía trên các thành phần khác */
+}
+
+.suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.suggestion-item:hover {
+  background-color: #f0f0f0; /* Đổi màu khi hover */
+}
+/* Search.css */
+/* Search.css */
+
+.noti-container {
+  position: absolute; /* Tách Noti khỏi luồng chính */
+  top: 40px; /* Căn chỉnh phía dưới chuông */
+  right: 0; /* Căn chỉnh sát cạnh phải chuông */
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  z-index: 1000; /* Đảm bảo hiển thị trên các phần tử khác */
+  width: 350px; /* Đặt kích thước cố định */
+  max-height: 450px; /* Đặt chiều cao tối đa để tránh tràn */
+  overflow-y: auto; /* Bật cuộn bên trong Noti nếu nội dung vượt quá */
+}
+
+.noti-container::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  border-width: 0 10px 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+}
+
+/* Đảm bảo trang chính không bị cuộn */
+body {
+  overflow: hidden;
+}
+
+/* Cho phép cuộn riêng Noti nếu nội dung vượt giới hạn */
+.noti-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.noti-container::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.noti-container::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+.noti-list {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.noti-item {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.noti-item:last-child {
+  border-bottom: none;
+}
+
+.no-noti {
+  text-align: center;
+  color: #888;
+}
+
+.clear-noti-btn {
+  background: #ff4d4f;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+}

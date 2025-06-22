@@ -1,0 +1,228 @@
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .headers {
+    height: 100px;
+    width: 100%;
+    background: #27aae1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .table-scroll {
+    max-height: 700px;
+    min-height: 570px; 
+    overflow-y: auto;
+    border: 1px solid #d1d5db;   
+    box-shadow: 0 1px 6px #0001;
+    margin-bottom: 1rem;
+  }
+  
+  .table-scroll::-webkit-scrollbar {
+    width: 8px;
+  }
+  .table-scroll::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 8px;
+  }
+  .table-scroll::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 8px;
+  }
+  
+  .table-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 #f1f5f9;
+  }
+  
+  .title {
+    font-size: 25px;
+    color: white;
+    position: absolute;
+    margin-left:40px;
+    font-weight: 600;
+    font-style: normal;
+  }
+  .titleRight {
+    font-size: 15px;
+    color: white;
+    font-weight: 600;
+    font-style: normal;
+    margin-right: 40px;
+  }
+  .logoContainer {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    padding: 10px;
+    margin-left: 65px;
+    padding-bottom: 5px;
+  }
+  .logoimg {
+    width: 120px;
+    height: 120px;
+    margin-left: 20px;
+  }
+  .text-logo {
+    color: white; /* Màu chữ cho tên cửa hàng */
+    font-weight: 600;
+    margin-top: 50px;
+    position: absolute;
+    font-size: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Đổ bóng cho chữ */
+    text-transform: uppercase;
+    font-style: italic;
+  }
+  .body {
+    display: flex;
+    align-items: center;
+    width: 95%;
+    padding: 20px;
+    margin-right: 50px;
+  }
+  .logo2Container {
+    display: flex;
+    align-items: center;
+    padding-left: 130px;
+    padding-top: 17px;
+  }
+  
+  .logoimg2 {
+    width: 630px;
+    height: 380px;
+  }
+  .text-logo2 {
+    position: absolute;
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 370px;
+    margin-left: 40px;
+    text-transform: uppercase;
+    background: linear-gradient(
+      to right,
+      #27aae1 50%,
+      #1c75bc 80%
+    ); /* Tạo gradient màu */
+    -webkit-background-clip: text; /* Cắt nền theo hình dạng chữ */
+    color: transparent; /* Làm cho màu chữ trở thành trong suốt */
+  }
+  .login-Container {
+    background-color: #ffffff; /* Màu nền trắng */
+    border: 4px solid #27aae1; /* Đường viền màu xanh */
+    border-radius: 10px; /* Bo góc cho container */
+    width: 450px; /* Chiều rộng của form */
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0.2, 0.2, 0.2, 0.2); /*Đổ bóng cho form*/
+    margin: auto; /*căn giữa form*/
+    margin-top: 120px; /* Khoảng cách từ trên xuống */
+    padding-left: 45px;
+    margin-left: 90px;
+   
+  }
+  .login-Container2 {
+    background-color: #ffffff; /* Màu nền trắng */
+    border: 4px solid #27aae1; /* Đường viền màu xanh */
+    border-radius: 10px; /* Bo góc cho container */
+    width: 450px; /* Chiều rộng của form */
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0.2, 0.2, 0.2, 0.2); /*Đổ bóng cho form*/
+    margin: auto; /*căn giữa form*/
+    margin-top: 17px; /* Khoảng cách từ trên xuống */
+    padding-left: 45px;
+    margin-left: 170px;
+   
+  }
+  .textF-Container {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+  }
+  .text-login {
+    color: #27aae1;
+    font-weight: 700;
+  }
+  .text-loginR {
+    padding-top: 10px;
+    padding-left: 7px;
+  
+  }
+  .inputLogin {
+    margin-top: -10px;
+  }
+  .label {
+    margin-top: 20px;
+  }
+  .inside-input {
+    display: flex;
+    flex-direction: column;
+  }
+  .input {
+    width: 95% !important; /* Chiều rộng 100% cho input */
+    padding: 10px; /* Padding cho input */
+    border: 2px solid #27aae1; /* Đường viền cho input */
+    border-radius: 5px; /* Bo góc cho input */
+    margin-top: 5px; /* Khoảng cách giữa nhãn và input */
+    font-size: 16px; /* Kích thước chữ cho input */
+  }
+  .input-password {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .icon-eyesoff {
+    weight: 20px;
+    height: 20px;
+    position: absolute;
+    right: 35px;
+    top: 16px;
+    cursor: pointer; /* Con trỏ chuột khi hover */
+  }
+  
+  .btn-login {
+    width: 95%;
+    padding: 10px;
+    margin-top: 40px;
+    background: #27aae1;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    border: none;
+    border-radius: 5px;
+  }
+  .btn-login:hover {
+    background-color: rgba(0, 170, 255, 0.8);
+  }
+  .forgot-password {
+    display: block;
+    text-align: center; /* Căn giữa văn bản */
+    margin-top: 10px; /* Khoảng cách giữa nút và liên kết */
+    color: #27aae1; /* Màu chữ cho liên kết */
+    text-decoration: none; /* Bỏ gạch chân */
+    margin-right: 18px;
+    font-size: 16px;
+    font-weight: 600;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .forgot-password:hover {
+    text-decoration: underline; /* Gạch chân khi di chuột qua */
+  }
+  
+  .input-error {
+    border-color: red;
+  }
+  
+  .error-text {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 4px;
+  }
+  
+  .icon-eyesoff {
+    cursor: pointer;
+  }
+  

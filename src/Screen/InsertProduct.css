@@ -1,0 +1,198 @@
+.containerne {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-top: 32px;
+  padding-top: 10px;
+}
+.n-c-q-x-container {
+  display: flex;
+  align-items: center;
+  gap: 50px; /* Khoảng cách giữa các phần tử */
+}
+.form-container {
+  width: 100%;
+  padding: 15px;
+  align-items: start;
+  padding-left: 210px;
+  display: flex;
+  flex-direction: column;
+  background-color: red;
+}
+.titleF {
+  width: 80%;
+  text-align: center;
+}
+.titleF h1 {
+  color: #1c75bc;
+}
+.form-label {
+  font-weight: 400;
+}
+.inside-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 77px;
+}
+.form-select {
+  width: 200px !important;
+  height: 30px !important;
+  margin-bottom: 10px;
+  border: 1px solid #27aae1; /* Đổi màu viền */
+  border-radius: 5px; /* Bo góc cho viền */
+  outline: none; /* Loại bỏ viền mặc định khi chọn */
+  /* transition: border-color 0.3s ease; Hiệu ứng chuyển mượt khi thay đổi màu viền */
+}
+.form-control {
+  width: 200px;
+  height: 30px;
+  border: 1px solid #27aae1; /* Đổi màu viền */
+  border-radius: 5px; /* Bo góc cho viền */
+  outline: none; /* Loại bỏ viền mặc định khi chọn */
+  /* transition: border-color 0.3s ease; Hiệu ứng chuyển mượt khi thay đổi màu viền */
+}
+.inside-container label {
+  font-weight: 600;
+}
+.g-d-c-l-container {
+  display: flex;
+  align-items: center;
+  gap: 50px; /* Khoảng cách giữa các phần tử */
+}
+.n-c-a-container {
+  display: flex;
+  width: 100%;
+  gap: 50px; /* Khoảng cách giữa các phần tử */
+  align-items: flex-start;
+  margin-left: 215px;
+  
+}
+.link-container {
+  flex: 1;
+   /* Để đảm bảo width tự động cân bằng */
+}
+
+/* Style phần tải ảnh từ thiết bị */
+/* Bố cục cho phần tải ảnh */
+.image-upload-container {
+  display: flex; /* Dùng flexbox để ảnh nằm ngang kế bên */
+  align-items: flex-start; /* Căn các ảnh theo đầu phần tải ảnh */
+  gap: 20px; /* Khoảng cách giữa thẻ input và các ảnh */
+}
+
+/* Style cho container preview */
+.image-preview-container {
+  display: flex; /* Hiển thị các ảnh nằm ngang */
+  gap: 10px; /* Khoảng cách giữa các ảnh */
+  flex-wrap: wrap; /* Đảm bảo ảnh sẽ xuống dòng khi không đủ không gian */
+}
+.linkimg-container {
+  display: flex;
+}
+
+/* Style cho từng ảnh */
+.image-preview {
+  position: relative;
+  width: 70px;
+  height: 70px;
+}
+.btn-link {
+  width: 32px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  top: 390px;
+  right: 125px;
+}
+
+.image-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Giữ tỉ lệ ảnh và cắt phần thừa nếu cần */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.remove-image-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 2px 5px;
+  border-radius: 50%;
+}
+
+.form-controlD {
+  width: 960px !important;
+  height: 70px !important;
+  border: 1px solid #27aae1; /* Đổi màu viền */
+  border-radius: 5px; /* Bo góc cho viền */
+  outline: none; /* Loại bỏ viền mặc định khi chọn */
+  /* transition: border-color 0.3s ease; Hiệu ứng chuyển mượt khi thay đổi màu viền */
+}
+.btn-container2 {
+  display: flex;
+  gap: 30px;
+  margin: 30px;
+  width: 75%;
+  justify-content: center;
+}
+.btn-primary {
+  background: #ff3434;
+  border: none;
+  width: 230px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  border-radius: 10px;
+}
+.btn-primaryC {
+  background: #27aae1;
+  border: none;
+  width: 230px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.image-preview {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.image-item {
+  position: relative;
+}
+.image-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+.image-item button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 2px 5px;
+}

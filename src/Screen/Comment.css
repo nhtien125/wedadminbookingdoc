@@ -1,0 +1,151 @@
+.review-list-container {
+    padding: 20px;
+  
+  }
+  
+  .filters-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .review-list {
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 10px;
+  }
+  
+  .product-label {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 10px;
+    /* Tạo khoảng cách giữa chữ và nội dung */
+  }
+  
+  .review-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eaeaea;
+    padding: 10px 0;
+  }
+  
+  .review-item:last-child {
+    border-bottom: none;
+  }
+  
+  .author-section {
+    flex: 3;
+    position: relative;
+    padding-bottom: 10px;
+    
+  }
+  
+  .author-label {
+    font-weight: bold;
+    padding-bottom: 15px;
+  
+  }
+  
+  .author-name {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .author-email {
+    font-size: 12px;
+    color: #007bff;
+  }
+  
+  .product-section {
+    flex: 4;
+    position: relative;
+    padding-bottom: 10px;
+  
+  }
+  
+  .product-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+  
+  }
+  
+  .product-name {
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  .product-flex {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .product-id {
+    margin: 0;
+    font-size: 12px;
+    color: gray;
+  }
+  
+  .comment-section {
+    flex: 2;
+    padding-bottom: 30px;
+  }
+  
+  .comment-label {
+    font-weight: bold;
+    
+  }
+  
+  .date-section {
+    flex: 2;
+    text-align: right;
+    
+  }
+  
+  .date-label {
+    font-weight: bold;
+  }
+  
+  /* .rating-section { */
+    /* flex: 1;
+    text-align: center;
+    color: gold;
+    padding-bottom: 40px;
+  } */
+  
+  .delete-section {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .product_flex {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    top: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .stars {
+  
+    margin-left: 200px;
+  }
+  .rating-section {
+    display: flex;
+    gap: 4px; /* Khoảng cách giữa các ngôi sao */
+    margin-left: 90px;
+  }
+  
+  .star {
+    width: 20px; /* Kích thước ngôi sao */
+    height: 20px;
+    margin-top: 10px;
+  }
+  .delete-icon{
+    width: 20px;
+    height: 20px;
+  }

@@ -1,0 +1,268 @@
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+
+}
+
+.slider {
+  background-color: #1c75bc; /* Màu nền sidebar */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh; /* Đặt chiều cao của sidebar chiếm toàn bộ màn hình */
+  overflow-y: auto; /* Cho phép cuộn dọc nếu nội dung tràn */
+}
+
+/* Style cho vùng chứa logo */
+.logo-container {
+  background-color: #1c75bc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 20px; /* Khoảng cách giữa logo và menu */
+  padding-top: 20px;
+}
+
+/* Style cho logo */
+.logoBlue {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* Làm tròn logo */
+  margin-top: 20px;
+}
+
+/* Style chung cho Menu */
+.menu {
+  background-color: #1c75bc;
+  flex-grow: 1; /* Đảm bảo menu chiếm không gian còn lại trong sidebar */
+  width: 100%;
+}
+
+/* Đổi màu chữ của tất cả các mục trong menu */
+.slider .ant-menu-submenu-title {
+  color: #fff; /* Màu chữ trắng cho title */
+}
+
+/* Màu khi title (SubMenu) được hover */
+.slider .ant-menu-submenu-title:hover {
+  background-color: #27AAE1; /* Màu nền xanh khi hover */
+  color: #fff; /* Màu chữ trắng khi hover */
+}
+
+/* Màu khi title (SubMenu) được chọn */
+.slider .ant-menu-submenu-title-selected {
+  background-color: #27AAE1; /* Màu nền xanh khi hover */
+  color: #fff; /* Màu chữ trắng khi hover */
+}
+
+/* Style cho các subtitle (mục nhỏ) */
+.slider .ant-menu-item {
+  color: #fff; /* Màu chữ trắng mặc định cho các mục nhỏ */
+  background-color: transparent; /* Không đổi màu nền */
+}
+
+/* Chỉ đổi màu chữ của các mục nhỏ khi được chọn */
+.slider .ant-menu-item-selected {
+  background-color: #27AAE1; /* Nền trong suốt để giữ màu của SubMenu */
+  color: #fff; /* Đổi màu chữ xanh khi được chọn */
+}
+
+/* Màu khi hover vào các mục nhỏ */
+.slider .ant-menu-item:hover {
+  background-color: #27AAE1; /* Không đổi màu nền khi hover */
+  color: #fff; /* Màu chữ xanh khi hover */
+}
+
+/* Đảm bảo trang chiếm hết chiều cao màn hình */
+.container-all {
+  display: flex;
+  height: 100vh; 
+  background: white;
+}
+
+.container-allin {
+  display: flex;
+  flex-grow: 1; 
+  background: white;
+}
+.hd-nav {
+ display: flex;
+ gap: 4px;
+ align-items: center;
+ 
+
+}
+.hd-nav h1{
+  font-size: 30px;
+}
+.admin{
+    color: #1976D2;
+    font-size: 20px;
+    font-weight: 600 ;
+    font-style: italic;
+        /* Làm chữ nghiêng */
+    text-decoration: underline;
+}
+
+
+.content {
+  padding: 24px;
+  background-color: #f0f2f5; 
+  border-radius: 8px;
+  flex-grow: 1; /* Đảm bảo phần content chiếm toàn bộ không gian còn lại */
+}
+.right-component{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  background: white;
+  margin: 0;
+  padding: 15px;
+
+}
+.cpn-search{
+  
+}
+.headers-nav{
+  margin-left: 50px;
+  height: 50px;
+}
+.rr-component{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+
+}
+.setting-icon{
+  width: 35px;
+  height: 30px;
+  padding-top: 25px;
+
+}
+.rrr-cpn{
+  padding-left: 18px;
+}
+
+.bell-icon{
+  width: 22px;
+  height: 24px;
+margin-top: 4px;
+}
+
+.mail-icon{
+  width: 24px;
+  height: 22px;
+}
+
+.icon-component{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+ 
+
+}
+
+.search-suggestions {
+  position: absolute;
+  top: 100%; /* Hiển thị ngay bên dưới thanh tìm kiếm */
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10; /* Đảm bảo nằm phía trên các thành phần khác */
+}
+
+.suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.suggestion-item:hover {
+  background-color: #f0f0f0; /* Đổi màu khi hover */
+}
+/* Search.css */
+/* Search.css */
+
+.noti-container {
+  position: absolute; /* Tách Noti khỏi luồng chính */
+  top: 70px; /* Căn chỉnh phía dưới chuông */
+  right: 0; /* Căn chỉnh sát cạnh phải chuông */
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  z-index: 1000; /* Đảm bảo hiển thị trên các phần tử khác */
+  width: 350px; /* Đặt kích thước cố định */
+  max-height: 450px; /* Đặt chiều cao tối đa để tránh tràn */
+  overflow-y: auto; /* Bật cuộn bên trong Noti nếu nội dung vượt quá */
+}
+
+.noti-container::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  border-width: 0 10px 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+}
+
+/* Đảm bảo trang chính không bị cuộn */
+body {
+  overflow: hidden;
+}
+
+/* Cho phép cuộn riêng Noti nếu nội dung vượt giới hạn */
+.noti-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.noti-container::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.noti-container::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+.noti-list {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.noti-item {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.noti-item:last-child {
+  border-bottom: none;
+}
+
+.no-noti {
+  text-align: center;
+  color: #888;
+}
+
+.clear-noti-btn {
+  background: #ff4d4f;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+}

@@ -1,0 +1,51 @@
+/* Sidebar.css */
+.sidebar {
+    background-color: #2196F3; /* Main blue color */
+    width: 250px;
+    height: 100vh;
+    color: white;
+    padding-top: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .menu-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+
+  }
+  
+  .menu-item:hover {
+    background-color: #1976D2; /* Slightly darker blue */
+  }
+  
+  .submenu {
+    padding-left: 20px;
+  }
+  
+  .submenu-item {
+    padding: 8px 20px;
+    font-size: 14px;
+    color: #BBDEFB; /* Lighter blue for submenu */
+    cursor: pointer;
+  }
+  
+  .submenu-item:hover {
+    color: white;
+  }
+  
+  .logout {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: left;
+    padding-left: 20px;
+  }
+  
+  .menu-item svg {
+    margin-right: 10px;
+  }
+  
