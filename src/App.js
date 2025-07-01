@@ -17,9 +17,8 @@ import NavMenu from "./Navigate/NavMenu";
 import { AdminProvider } from "./Component/AdminProvider";
 import '@fontsource/roboto'; // Tải trọng số mặc định
 import '@fontsource/roboto/400.css'; // Tải trọng số cụ thể
-import ResetPassword from "./Screen/ResetPassword";
 import Review from "./Screen/Revview";
-import MedicalRecordList from "./Screen/MedicalRecordList";
+import VaccinationCenter from "./Screen/VaccinationCenter";
 import Register from "./Screen/Register";
 import Loginn from "./Screen/Loginn";
 function App() {
@@ -57,14 +56,14 @@ function App() {
         <AdminProvider>
           <NavMenu isHidden={isHidden} onLogout={logout}>
             <Routes>
-              <Route path="/" element={<Navigate to="/charts" replace />} />
+              <Route path="/" element={<Navigate to="/login" replace />} />
               <Route path="/Clinic" element={<Clinic />} />
               <Route path="/Doctor" element={<Doctor />} />
               <Route path="/Hospital" element={<Hospital />} />
               <Route path="/add-Product" element={<AddProduct />} />
               <Route path="/insert-Product" element={<InsertProduct />} />
               <Route path="/MedicalService" element={<MedicalService />} />
-              <Route path="/MedicalRecordList" element={<MedicalRecordList />} />
+              <Route path="/VaccinationCenter" element={<VaccinationCenter />} />
               <Route path="/Review" element={<Review />} />
               <Route path="/login" element={<Navigate to="/charts" />} />
               <Route path="/Loginn" element={<Loginn />} />

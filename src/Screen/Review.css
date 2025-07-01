@@ -13,7 +13,7 @@ body {
   }
   .table-scroll {
     max-height: 700px;
-    min-height: 570px; 
+    min-height: 470px; 
     overflow-y: auto;
     border: 1px solid #d1d5db;   
     box-shadow: 0 1px 6px #0001;

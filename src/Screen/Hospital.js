@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ApiService from "../services/apiService";
-import "./Hospital.css"; // CSS riêng nếu có
+import "./Hospital.css";
 
 export default function Hospital() {
   const [data, setData] = useState([]);
@@ -8,6 +8,7 @@ export default function Hospital() {
     uuid: "",
     name: "",
     address: "",
+    description: "",
     imageFile: null,
     imageUrl: "",
   });
@@ -15,16 +16,17 @@ export default function Hospital() {
   const [previewImage, setPreviewImage] = useState("");
 
   useEffect(() => {
-    const fetchHospitals = async () => {
-      try {
-        const result = await ApiService.get("/hospital/getAll");
-        if (result.code === 200) setData(result.data);
-      } catch (err) {
-        console.error("Lỗi khi tải dữ liệu:", err);
-      }
-    };
     fetchHospitals();
   }, []);
+
+  const fetchHospitals = async () => {
+    try {
+      const result = await ApiService.get("/hospital/getAll");
+      if (result.code === 200) setData(result.data);
+    } catch (err) {
+      console.error("Lỗi khi tải dữ liệu:", err);
+    }
+  };
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -33,7 +35,7 @@ export default function Hospital() {
       setForm((prev) => ({
         ...prev,
         imageFile: file,
-        imageUrl: "", // reset link nếu có file
+        imageUrl: "",
       }));
       if (file) {
         const reader = new FileReader();
@@ -44,9 +46,7 @@ export default function Hospital() {
       }
     } else {
       setForm((prev) => ({ ...prev, [name]: value }));
-      if (name === "imageUrl") {
-        setPreviewImage(value); // preview link ảnh
-      }
+      if (name === "imageUrl") setPreviewImage(value);
     }
   };
 
@@ -56,12 +56,9 @@ export default function Hospital() {
       const formData = new FormData();
       formData.append("name", form.name);
       formData.append("address", form.address);
-
-      if (form.imageFile) {
-        formData.append("image", form.imageFile);
-      } else if (form.imageUrl) {
-        formData.append("image", form.imageUrl);
-      }
+      formData.append("description", form.description);
+      if (form.imageFile) formData.append("image", form.imageFile);
+      else if (form.imageUrl) formData.append("image", form.imageUrl);
 
       if (isEditing) {
         await ApiService.put(`/hospital/update/${form.uuid}`, formData);
@@ -70,18 +67,8 @@ export default function Hospital() {
         setData((prev) => [...prev, res.data]);
       }
 
-      setForm({
-        uuid: "",
-        name: "",
-        address: "",
-        imageFile: null,
-        imageUrl: "",
-      });
-      setPreviewImage("");
-      setIsEditing(false);
-
-      const updated = await ApiService.get("/hospital/getAll");
-      setData(updated.data);
+      resetForm();
+      fetchHospitals();
     } catch (error) {
       console.error("Lỗi khi gửi form:", error);
     }
@@ -92,6 +79,7 @@ export default function Hospital() {
       uuid: item.uuid,
       name: item.name,
       address: item.address,
+      description: item.description || "",
       imageFile: null,
       imageUrl: item.image || "",
     });
@@ -108,37 +96,62 @@ export default function Hospital() {
     }
   };
 
+  const resetForm = () => {
+    setForm({
+      uuid: "",
+      name: "",
+      address: "",
+      description: "",
+      imageFile: null,
+      imageUrl: "",
+    });
+    setIsEditing(false);
+    setPreviewImage("");
+  };
+
   return (
-    <div className="p-4 max-w-5xl mx-auto overflow-y-auto min-h-screen bg-gray-50">
+    <div className="p-4 max-w-5xl mx-auto min-h-screen bg-gray-50">
       <h1 className="text-2xl font-bold mb-4">Quản lý bệnh viện</h1>
 
-      <form onSubmit={handleSubmit} className="space-y-4 mb-6 bg-white p-4 rounded shadow">
-        <input
-          type="text"
-          name="name"
-          placeholder="Tên bệnh viện"
-          value={form.name}
-          onChange={handleChange}
-          className="border p-2 w-full rounded"
-          required
-        />
-        <input
-          type="text"
-          name="address"
-          placeholder="Địa chỉ"
-          value={form.address}
-          onChange={handleChange}
-          className="border p-2 w-full rounded"
-          required
-        />
+      {/* FORM */}
+      <form onSubmit={handleSubmit} className="bg-white p-4 rounded shadow space-y-4 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input
+            type="text"
+            name="name"
+            placeholder="Tên bệnh viện"
+            value={form.name}
+            onChange={handleChange}
+            className="border p-2 rounded w-full"
+            required
+          />
+          <input
+            type="text"
+            name="address"
+            placeholder="Địa chỉ"
+            value={form.address}
+            onChange={handleChange}
+            className="border p-2 rounded w-full"
+            required
+          />
+          <input
+            type="text"
+            name="description"
+            placeholder="Mô tả"
+            value={form.description}
+            onChange={handleChange}
+            className="border p-2 rounded w-full"
+            required
+          />
+        </div>
 
-        <div className="flex gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <input
             type="file"
             name="imageFile"
             accept="image/*"
             onChange={handleChange}
-            className="border p-2 w-1/2 rounded"
+            className="border p-2 rounded w-full"
           />
           <input
             type="text"
@@ -146,17 +159,17 @@ export default function Hospital() {
             placeholder="Hoặc dán link ảnh (https://...)"
             value={form.imageUrl}
             onChange={handleChange}
-            className="border p-2 w-1/2 rounded"
+            className="border p-2 rounded w-full"
           />
         </div>
 
         {previewImage && (
           <div>
-            <p className="text-sm text-gray-500 mb-1">Xem trước ảnh:</p>
+            <p className="text-sm text-gray-100 mb-1">Xem trước ảnh:</p>
             <img
               src={previewImage}
               alt="Preview"
-              className="w-24 h-24 object-cover border rounded"
+              className="imgbe"
             />
           </div>
         )}
@@ -166,33 +179,33 @@ export default function Hospital() {
         </button>
       </form>
 
-      <div className="overflow-auto max-h-[200px] border rounded bg-white">
-      <div className="table-scroll">
-        <table className="min-w-full table-auto text-sm">
-          <thead className="bg-gray-100 sticky top-0 z-10">
+      {/* TABLE */}
+      <div className="hospital-table-wrapper">
+        <table className="hospital-table">
+          <thead>
             <tr>
-              <th className="border p-2">Tên</th>
-              <th className="border p-2">Địa chỉ</th>
-              <th className="border p-2">Ảnh</th>
-              <th className="border p-2">Hành động</th>
+              <th>Tên</th>
+              <th>Địa chỉ</th>
+              <th>Mô tả</th>
+              <th>Ảnh</th>
+              <th>Hành động</th>
             </tr>
           </thead>
           <tbody>
             {data.map((item) => (
               <tr key={item.uuid}>
-                <td className="border p-2">{item.name}</td>
-                <td className="border p-2">{item.address}</td>
-                <td className="border p-2">
+                <td>{item.name}</td>
+                <td>{item.address}</td>
+                <td>{item.description}</td>
+                <td>
                   <img
                     src={item.image || "https://via.placeholder.com/100"}
                     alt="Ảnh"
                     className="w-16 h-16 object-cover rounded"
-                    onError={(e) =>
-                      (e.target.src = "https://via.placeholder.com/100")
-                    }
+                    onError={(e) => (e.target.src = "https://via.placeholder.com/100")}
                   />
                 </td>
-                <td className="border p-2 space-x-2">
+                <td>
                   <button
                     onClick={() => handleEdit(item)}
                     className="bg-yellow-400 px-3 py-1 rounded hover:bg-yellow-500"
@@ -201,7 +214,7 @@ export default function Hospital() {
                   </button>
                   <button
                     onClick={() => handleDelete(item.uuid)}
-                    className="bg-red-500 px-3 py-1 text-white rounded hover:bg-red-600"
+                    className="bg-red-500 px-3 py-1 text-white rounded hover:bg-red-600 ml-2"
                   >
                     Xoá
                   </button>
@@ -210,7 +223,6 @@ export default function Hospital() {
             ))}
           </tbody>
         </table>
-        </div>
       </div>
     </div>
   );
