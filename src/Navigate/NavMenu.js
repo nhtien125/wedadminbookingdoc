@@ -15,9 +15,6 @@ import bvs from "../assets/images/bvs.png";
 // import Search from "../Component/Search";
 import "@fontsource/roboto";
 import "@fontsource/roboto/400.css";
-import bellActive from "../assets/images/bell2.png"; // Chuông bình thường
-import bellInactive from "../assets/images/bell.png"; // Chuông khi nhấn
-import mailIcon from "../assets/images/mail.png";
 import Noti from "../../src/Component/Noti";
 
 const { Content, Sider } = Layout;
@@ -114,8 +111,7 @@ const NavMenu = ({ children, isHidden, onLogout }) => {
                   icon: <UserOutlined />,
                   label: "Quản lý bác sĩ",
                 },
-                
-               
+
                 {
                   key: "/Review",
                   icon: <BarChartOutlined />,
@@ -131,14 +127,18 @@ const NavMenu = ({ children, isHidden, onLogout }) => {
                   icon: <BarChartOutlined />,
                   label: "Dịch vụ y tế",
                 },
-               
+                {
+                  key: "/articles",
+                  icon: <BarChartOutlined />,
+                  label: "Bài viết",
+                },
+
                 // Mục đăng xuất trong menu
                 {
                   key: "logout",
                   icon: <PoweroffOutlined />,
                   label: "Đăng xuất",
                 },
-                
               ]}
               onClick={handleMenuClick}
             />
@@ -182,7 +182,7 @@ const NavMenu = ({ children, isHidden, onLogout }) => {
           <Content
             style={{
               padding: 15,
-              height: "50%",
+              height: "30%",
               width: "100%",
               background: colorBgContainer,
               borderRadius: borderRadiusLG,
@@ -204,8 +204,6 @@ const NavMenu = ({ children, isHidden, onLogout }) => {
       >
         <p>Bạn có chắc chắn muốn đăng xuất?</p>
       </Modal>
-
-      
     </Layout>
   );
 };

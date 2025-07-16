@@ -7,20 +7,19 @@ import {
 } from "react-router-dom";
 import "./App.css";
 
-import Hospital from "./Screen/Hospital";
+import Hospital from "./Screen/Hospital/Hospital";
 import AddProduct from "./Navigate/Sidebar";
-import InsertProduct from "./Screen/InsertProduct";
-import Doctor from "./Screen/Doctor";
-import MedicalService from "./Screen/MedicalService";
-import Clinic from "./Screen/Clinic";
+import Doctor from "./Screen/Doctor/Doctor";
+import MedicalService from "./Screen/MedicalService/MedicalService";
+import Clinic from "./Screen/Clinic/Clinic";
 import NavMenu from "./Navigate/NavMenu";
 import { AdminProvider } from "./Component/AdminProvider";
 import '@fontsource/roboto'; // Tải trọng số mặc định
 import '@fontsource/roboto/400.css'; // Tải trọng số cụ thể
-import Review from "./Screen/Revview";
-import VaccinationCenter from "./Screen/VaccinationCenter";
-import Register from "./Screen/Register";
-import Loginn from "./Screen/Loginn";
+import Review from "./Screen/Review/Revview";
+import VaccinationCenter from "./Screen/VaccinationCenter/VaccinationCenter";
+import Loginn from "./Screen/Login/Loginn";
+import Articles  from "./Screen/Articles/Articles"; 
 function App() {
   const getAdminFromLocalStorage = () => {
     const adminInfo = localStorage.getItem("admin");
@@ -61,13 +60,12 @@ function App() {
               <Route path="/Doctor" element={<Doctor />} />
               <Route path="/Hospital" element={<Hospital />} />
               <Route path="/add-Product" element={<AddProduct />} />
-              <Route path="/insert-Product" element={<InsertProduct />} />
               <Route path="/MedicalService" element={<MedicalService />} />
               <Route path="/VaccinationCenter" element={<VaccinationCenter />} />
               <Route path="/Review" element={<Review />} />
-              <Route path="/login" element={<Navigate to="/charts" />} />
+              <Route path="/articles" element={<Articles />} />
               <Route path="/Loginn" element={<Loginn />} />
-              <Route path="/Register" element={<Register />} />
+      
             </Routes>
           </NavMenu>
         </AdminProvider>
@@ -75,8 +73,6 @@ function App() {
         <Routes>
           <Route path="/loginn" element={<Loginn saveAdmin={saveAdminInfo} />} />
           <Route path="*" element={<Navigate to="/loginn" replace />} />
-          <Route path="/Register" element={<Register />} />
-
         </Routes>
       )}
     </Router>

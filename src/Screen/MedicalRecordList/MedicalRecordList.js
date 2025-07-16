@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ApiService from "../../src/services/apiService"; // Đảm bảo path đúng
+import ApiService from "../../services/apiService"; // Đảm bảo path đúng
 import "./MedicalRecordList.css";
 
 export default function MedicalRecordList() {
@@ -11,7 +11,7 @@ export default function MedicalRecordList() {
 
   const fetchRecords = async () => {
     try {
-      const res = await ApiService.get("/medicalRecord/getAll");
+      const res = await ApiService.get("medicalRecord/getAll");
       if (res.code === 200) {
         setRecords(res.data);
       } else {

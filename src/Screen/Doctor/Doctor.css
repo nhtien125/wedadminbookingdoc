@@ -1,0 +1,126 @@
+/* Container sát top */
+.doctor-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Tiêu đề */
+h2 {
+  font-size: 24px;
+  margin: 0 0 20px 0;
+  color: #2c3e50;
+}
+
+/* Bọc bảng có scroll */
+.table-wrapper {
+  overflow-y: auto;
+  max-height: 470px;
+  border: 1px solid #dfe4ea;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Bảng */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1000px;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #dfe4ea;
+  text-align: left;
+  vertical-align: middle;
+  color: #34495e;
+}
+
+thead {
+  background-color: #ecf0f1;
+  color: #2c3e50;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* Trạng thái màu sắc */
+.status-0 {
+  color: #27ae60; /* Green for Đã duyệt */
+  font-weight: 500;
+}
+
+.status-1 {
+  color: #f1c40f; /* Yellow for Đang chờ */
+  font-weight: 500;
+}
+
+.status-2 {
+  color: #c0392b; /* Red for Từ chối */
+  font-weight: 500;
+}
+
+/* Nút hành động */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.approve-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.approve-button:hover {
+  background-color: #2980b9;
+}
+
+.approve-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.3);
+}
+
+.reject-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.reject-button:hover {
+  background-color: #c0392b;
+}
+
+.reject-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.3);
+}
+
+/* Scrollbar đẹp */
+.table-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: #bdc3c7;
+  border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  background: #f1f3f5;
+}
+
+.table-wrapper {
+  scrollbar-width: thin;
+  scrollbar-color: #bdc3c7 #f1f3f5;
+}
